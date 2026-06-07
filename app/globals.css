@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 230 52% 5%;
+  --foreground: 210 40% 98%;
+  --muted: 226 32% 12%;
+  --muted-foreground: 218 18% 70%;
+  --border: 216 24% 18%;
+  --input: 216 24% 18%;
+  --ring: 188 95% 62%;
+  --primary: 185 92% 62%;
+  --primary-foreground: 224 62% 8%;
+  --accent: 271 88% 69%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #050712;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #050712;
+  color: hsl(var(--foreground));
+  text-rendering: geometricPrecision;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.35);
+  color: #f8fafc;
+}
+
+.vault-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(8, 13, 30, 0.92)),
+    radial-gradient(circle at 20% 0%, rgba(34, 211, 238, 0.18), transparent 42%);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.vault-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(34, 211, 238, 0.65), transparent 36%, rgba(192, 132, 252, 0.46), transparent 70%, rgba(252, 211, 77, 0.58));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.shine-text {
+  background: linear-gradient(90deg, #e0f2fe, #67e8f9, #f5d06f, #d8b4fe, #e0f2fe);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
